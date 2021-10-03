@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Card = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow:  ${({ theme }) => theme.boxShadow};
   display: inline-block;
   position: relative;
   cursor: pointer;

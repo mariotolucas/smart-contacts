@@ -49,7 +49,8 @@ ContactCard.propTypes = {
   image: PropTypes.string.isRequired,
   template: PropTypes.string.isRequired,
   isFavorite: PropTypes.bool,
-  handleFavoriteClick: PropTypes.func.isRequired
+  handleFavoriteClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default ContactCard

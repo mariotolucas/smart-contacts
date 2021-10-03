@@ -7,6 +7,7 @@ import listIcon from '../../assets/img/organize-list.png'
 import ContactCard from '../../components/ContactCard'
 import contactsData from '../../assets/data/data.json'
 import { removeFromArray } from '../../helpers'
+import ContactListItem from '../../components/ContactListItem'
 
 const ORDER_BY = {
   NAME: 'NAME',
@@ -17,6 +18,7 @@ const Contacts = () => {
   const [favoriteContacts, setFavoriteContacts] = useState([])
   const [filter, setFilter] = useState('')
   const [orderBy, setOrderBy] = useState(null)
+  const [isCardView, setIsCardView] = useState(true)
 
   const toggleFavorite = (contactShortName) => {
     const newFavoriteContacts = favoriteContacts.includes(contactShortName)
@@ -30,6 +32,8 @@ const Contacts = () => {
   }
 
   const getCards = (isFavorite) => {
+    const Component = isCardView ? ContactCard : ContactListItem
+
     const contactsToDisplay = getContactsToDisplay()
 
     const contactsList = contactsToDisplay.filter(contact => {
@@ -38,18 +42,33 @@ const Contacts = () => {
     })
 
     return contactsList.map((contact, i) => {
-      const { name, image, template, shortName } = contact
+      const { name, image, template, shortName, created } = contact
+
+      const date = getDateString(created)
       return (
-        <ContactCard
+        <Component
           isFavorite={isFavorite}
           key={i}
           image={image}
           name={name}
           template={template}
+          date={date}
           handleFavoriteClick={() => { toggleFavorite(shortName) }}
         />
       )
     })
+  }
+
+  const getDateString = (dateString) => {
+    const date = new Date(dateString)
+    if (isNaN(date.getTime())) return ''
+
+    const year = date.getFullYear()
+    const month = (1 + date.getMonth()).toString().padStart(2, '0')
+    const day = date.getDate().toString().padStart(2, '0')
+
+    // returns an english format date
+    return month + '/' + day + '/' + year
   }
 
   const getContactsFiltered = () => {
@@ -108,17 +127,24 @@ const Contacts = () => {
           <Button onClick={() => { setOrderBy(ORDER_BY.DATE) }}>
             Order by creation
           </Button>
-          <IconButton icon={blocksIcon} ariaLabel='Organize using cars.'/>
-          <IconButton icon={listIcon} ariaLabel='Organize using list.'/>
+          <IconButton
+            icon={blocksIcon} ariaLabel='Organize using cards.'
+            onClick={() => { setIsCardView(true) }}
+          />
+          <IconButton
+            icon={listIcon}
+            ariaLabel='Organize using list.'
+            onClick={() => { setIsCardView(false) }}
+          />
         </FiltersWrapper>
       </Header>
       <Main>
         <SubHeading>Favorities</SubHeading>
-        <CardsWrapper>
+        <CardsWrapper isCardView={isCardView}>
           {getCards(true)}
         </CardsWrapper>
         <Divider/>
-        <CardsWrapper>
+        <CardsWrapper isCardView={isCardView}>
           {getCards(false)}
         </CardsWrapper>
       </Main>
