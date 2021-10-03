@@ -33,7 +33,6 @@ export const SubHeading = styled.h2`
 export const CardsWrapper = styled.div`
   display: ${({ isCardView }) => isCardView ? 'grid' : 'block'};
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2fr);
   grid-gap: 20px;
 `
 

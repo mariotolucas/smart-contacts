@@ -22,11 +22,12 @@ const ContactCard = (props) => {
     image,
     template,
     isFavorite,
-    handleFavoriteClick
+    handleFavoriteClick,
+    onClick
   } = props
 
   return (
-    <Card>
+    <Card onClick={onClick}>
       <div>
         <FavoriteIcon
           src={isFavorite ? starIconActive : startIcon}

@@ -18,11 +18,12 @@ const ContactListItem = (props) => {
     image,
     name,
     date,
-    handleFavoriteClick
+    handleFavoriteClick,
+    onClick
   } = props
 
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <FavoriteIcon
         src={isFavorite ? starIconActive : startIcon}
         onClick={handleFavoriteClick}

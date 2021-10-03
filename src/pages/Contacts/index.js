@@ -6,8 +6,9 @@ import blocksIcon from '../../assets/img/organize-blocks.png'
 import listIcon from '../../assets/img/organize-list.png'
 import ContactCard from '../../components/ContactCard'
 import contactsData from '../../assets/data/data.json'
-import { removeFromArray } from '../../helpers'
+import { getDateString, removeFromArray } from '../../helpers'
 import ContactListItem from '../../components/ContactListItem'
+import { useHistory } from 'react-router-dom'
 
 const ORDER_BY = {
   NAME: 'NAME',
@@ -15,6 +16,7 @@ const ORDER_BY = {
 }
 
 const Contacts = () => {
+  const history = useHistory()
   const [favoriteContacts, setFavoriteContacts] = useState([])
   const [filter, setFilter] = useState('')
   const [orderBy, setOrderBy] = useState(null)
@@ -54,21 +56,10 @@ const Contacts = () => {
           template={template}
           date={date}
           handleFavoriteClick={() => { toggleFavorite(shortName) }}
+          onClick={() => { sendToContactPage(shortName) }}
         />
       )
     })
-  }
-
-  const getDateString = (dateString) => {
-    const date = new Date(dateString)
-    if (isNaN(date.getTime())) return ''
-
-    const year = date.getFullYear()
-    const month = (1 + date.getMonth()).toString().padStart(2, '0')
-    const day = date.getDate().toString().padStart(2, '0')
-
-    // returns an english format date
-    return month + '/' + day + '/' + year
   }
 
   const getContactsFiltered = () => {
@@ -109,6 +100,10 @@ const Contacts = () => {
     }
 
     return contactsToDisplay
+  }
+
+  const sendToContactPage = (contactShortName) => {
+    history.push('/contacts/' + contactShortName)
   }
 
   return (

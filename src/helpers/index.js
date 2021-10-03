@@ -5,3 +5,15 @@ export function removeFromArray (array, element) {
   }
   return array
 }
+
+export function getDateString (dateString) {
+  const date = new Date(dateString)
+  if (isNaN(date.getTime())) return null
+
+  const year = date.getFullYear()
+  const month = (1 + date.getMonth()).toString().padStart(2, '0')
+  const day = date.getDate().toString().padStart(2, '0')
+
+  // returns an english format date
+  return month + '/' + day + '/' + year
+}
