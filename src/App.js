@@ -1,8 +1,12 @@
 import Routes from './routes'
+import { ThemeProvider } from 'styled-components'
+import theme from './theme'
 
 function App () {
   return (
-    <Routes/>
+    <ThemeProvider theme={theme}>
+      <Routes/>
+    </ThemeProvider>
   )
 }
 
