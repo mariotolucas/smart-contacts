@@ -65,7 +65,7 @@ export const UpdateAccountWrapper = styled.div`
   background-color: blue;
 `
 
-export const SpanInfo = styled.span`
+export const InfoSpan = styled.span`
   color: ${({ theme }) => theme.fontColor};
   font-size: 14px;
   display: block;
@@ -75,4 +75,21 @@ export const SpanInfo = styled.span`
 
 export const InfoWrapper = styled.div`
   margin-bottom: 20px;
+`
+
+export const InfoAmountWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+`
+
+export const AmountWrapper = styled.div`
+  margin-left: 10px;
+`
+
+export const AmountSpan = styled.span`
+  font-size: 27px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.fontColor};
+  display: block;
 `
