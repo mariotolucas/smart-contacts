@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Card = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -51,16 +51,21 @@ export const Photo = styled.img`
   width: 100%;
 `
 
+const baseSpan = css`
+   text-transform: capitalize;
+   margin-top: 10px;
+   display: block;
+`
+
 export const Name = styled.span`
-  display: block;
   color: ${({ theme }) => theme.fontColor};
-  margin-top: 10px;
   font-weight: 600;
   font-size: 1.2vw;
+  ${baseSpan}
 `
 
 export const Template = styled.span`
   color: ${({ theme }) => theme.fontColorSecondary};
-  text-transform: capitalize;
-  margin-top: 10px;
+  font-size: .9vw;
+  ${baseSpan}
 `

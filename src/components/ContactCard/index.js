@@ -12,6 +12,10 @@ import {
   Template
 } from './ContactCardStyled'
 
+/*
+  At the mockup, under the name is written "build", but it is not clear wich data it represents.
+  Due the few time available, it was considered that this data should be the "template"
+*/
 const ContactCard = ({ name, image, template, isFavorite }) => {
   return (
     <Card>
