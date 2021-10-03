@@ -6,6 +6,7 @@ export const Card = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: inline-block;
   position: relative;
+  cursor: pointer;
 
   /*
     Adds a pseudo element to grant the card will always have the same proportion
@@ -45,6 +46,7 @@ export const PhotoWrapper = styled.div`
   width: 5vw;
   height: 5vw;
   overflow: hidden;
+  margin-bottom: 5px;
 `
 
 export const Photo = styled.img`
@@ -53,7 +55,7 @@ export const Photo = styled.img`
 
 const baseSpan = css`
    text-transform: capitalize;
-   margin-top: 10px;
+   margin-top: 5px;
    display: block;
 `
 
