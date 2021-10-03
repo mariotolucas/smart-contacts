@@ -7,6 +7,7 @@ export const CustomButton = styled.button`
   color: #fff;
   padding: 12px 18px;
   font-size: 15px;
+  cursor: pointer;
 `
 
 export const IconButtonStyled = styled.button`
@@ -16,4 +17,5 @@ export const IconButtonStyled = styled.button`
   height: 35px;
   background: url(${({ icon }) => icon}) no-repeat center center;
   background-size: 100%;
+  cursor: pointer;
 `

@@ -16,11 +16,22 @@ import {
   At the mockup, under the name is written "build", but it is not clear wich data it represents.
   Due the few time available, it was considered that this data should be the "template"
 */
-const ContactCard = ({ name, image, template, isFavorite }) => {
+const ContactCard = (props) => {
+  const {
+    name,
+    image,
+    template,
+    isFavorite,
+    handleFavoriteClick
+  } = props
+
   return (
     <Card>
       <div>
-        <FavoriteIcon src={isFavorite ? starIconActive : startIcon}/>
+        <FavoriteIcon
+          src={isFavorite ? starIconActive : startIcon}
+          onClick={handleFavoriteClick}
+        />
         <DataWraper>
           <PhotoWrapper>
             <Photo src={image}/>
@@ -37,7 +48,8 @@ ContactCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   template: PropTypes.string.isRequired,
-  isFavorite: PropTypes.bool
+  isFavorite: PropTypes.bool,
+  handleFavoriteClick: PropTypes.func.isRequired
 }
 
 export default ContactCard
