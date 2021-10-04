@@ -2,7 +2,7 @@ import React from 'react'
 import { BalloonImage, StatusWrapper, Wrapper } from './UpdateAccountStyled'
 import balloonImg from '../../../assets/img/balloon.png'
 import Button from '../../../components/Button'
-import { AmountSpan } from '../ContactInfoStyled'
+import { AmountSpan } from '../ContactDetailsStyled'
 
 const UpdateAccount = () => {
   return (

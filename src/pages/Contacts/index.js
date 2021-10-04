@@ -45,7 +45,6 @@ const Contacts = () => {
 
     return contactsList.map((contact, i) => {
       const { name, image, template, shortName, created } = contact
-
       const date = getDateString(created)
       return (
         <Component
@@ -81,7 +80,7 @@ const Contacts = () => {
   }
 
   const orderByDate = (contacts) => {
-    return contacts.sort(function (a, b) {
+    return contacts.sort((a, b) => {
       const dateA = new Date(a.created)
       const dateB = new Date(b.created)
       return dateA - dateB
@@ -91,6 +90,7 @@ const Contacts = () => {
   const getContactsToDisplay = () => {
     const contactsFilterted = getContactsFiltered()
     let contactsToDisplay
+
     switch (orderBy) {
       case ORDER_BY.NAME:
         contactsToDisplay = orderByName(contactsFilterted)

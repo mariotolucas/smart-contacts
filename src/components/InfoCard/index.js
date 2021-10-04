@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AmountWrapper, InfoAmountWrapper, Wrapper } from './InfoCardStyled'
-import { AmountSpan } from '../../pages/ContactInfo/ContactInfoStyled'
+import { AmountSpan } from '../../pages/ContactDetails/ContactDetailsStyled'
 import RoundedIcon from '../RoundedIcon'
 
 const InfoCard = ({ gridSpan, color, icon, text, value }) => {

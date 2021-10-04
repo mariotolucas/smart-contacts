@@ -17,13 +17,13 @@ import {
   CardsWrapper,
   InfoSpan,
   InfoWrapper
-} from './ContactInfoStyled'
+} from './ContactDetailsStyled'
 import UpdateAccount from './UpdateAccountContainer'
 import InfoCard from '../../components/InfoCard'
 import { Wrapper } from '../../components/InfoCard/InfoCardStyled'
 import RoundedIcon from '../../components/RoundedIcon'
 
-const ContactInfo = (props) => {
+const ContactDetails = (props) => {
   const { shortName } = props.match.params
   const contactData = contactsData.find(contact => contact.shortName === shortName)
 
@@ -88,8 +88,8 @@ const ContactInfo = (props) => {
   )
 }
 
-ContactInfo.propTypes = {
-  match: PropTypes.object
+ContactDetails.propTypes = {
+  match: PropTypes.object.isRequired
 }
 
-export default ContactInfo
+export default ContactDetails

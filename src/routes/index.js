@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 import Contacts from '../pages/Contacts'
-import ContactInfo from '../pages/ContactInfo'
+import ContactDetails from '../pages/ContactDetails'
 
 const Routes = () => {
   return (
@@ -10,7 +10,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Contacts}/>
         <Route exact path="/contacts" component={Contacts}/>
-        <Route exact path="/contacts/:shortName"component={ContactInfo}/>
+        <Route exact path="/contacts/:shortName"component={ContactDetails}/>
         <Redirect to='/' />
       </Switch>
     </Router>
