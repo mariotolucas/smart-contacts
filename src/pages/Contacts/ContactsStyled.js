@@ -4,6 +4,10 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
 `
 
 export const Title = styled.h1`
@@ -19,6 +23,21 @@ export const FiltersWrapper = styled.div`
   > input, button:not(:last-child) {
     margin-right: 10px;
   }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+
+    > input, button {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+`
+
+export const ViewTypeWrapper = styled.div`
+  display: flex;
 `
 
 export const Main = styled.main`

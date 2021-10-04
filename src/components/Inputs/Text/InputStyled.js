@@ -13,4 +13,8 @@ export const CustomInput = styled.input`
   ::placeholder {
     color: #8ca0b3;
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button, { IconButton } from '../../components/Button'
 import Input from '../../components/Inputs/Text'
-import { Title, Header, FiltersWrapper, Main, SubHeading, CardsWrapper, Divider } from './ContactsStyled'
+import { Title, Header, FiltersWrapper, Main, SubHeading, CardsWrapper, Divider, ViewTypeWrapper } from './ContactsStyled'
 import blocksIcon from '../../assets/img/organize-blocks.png'
 import listIcon from '../../assets/img/organize-list.png'
 import ContactCard from '../../components/ContactCard'
@@ -128,15 +128,17 @@ const Contacts = () => {
           <Button onClick={() => { setOrderBy(ORDER_BY.DATE) }}>
             Order by creation
           </Button>
-          <IconButton
-            icon={blocksIcon} ariaLabel='Organize using cards.'
-            onClick={() => { setIsCardView(true) }}
-          />
-          <IconButton
-            icon={listIcon}
-            ariaLabel='Organize using list.'
-            onClick={() => { setIsCardView(false) }}
-          />
+          <ViewTypeWrapper>
+            <IconButton
+              icon={blocksIcon} ariaLabel='Organize using cards.'
+              onClick={() => { setIsCardView(true) }}
+            />
+            <IconButton
+              icon={listIcon}
+              ariaLabel='Organize using list.'
+              onClick={() => { setIsCardView(false) }}
+            />
+          </ViewTypeWrapper>
         </FiltersWrapper>
       </Header>
       <Main>
