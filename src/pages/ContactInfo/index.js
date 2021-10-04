@@ -17,16 +17,14 @@ import {
   CreationDate,
   Main,
   CardsWrapper,
-  UpdateAccountWrapper,
-  InfoCard,
   InfoSpan,
-  InfoWrapper,
-  InfoAmountWrapper,
-  AmountSpan,
-  AmountWrapper
+  InfoWrapper
 } from './ContactInfoStyled'
+import UpdateAccount from './UpdateAccountContainer'
+import InfoCard from '../../components/InfoCard'
+import { Wrapper } from '../../components/InfoCard/InfoCardStyled'
 
-const RoundedIcon = ({ icon, color }) => {
+export const RoundedIcon = ({ icon, color }) => {
   return (
     <IconWrapper color={color}>
       <Icon src={icon}/>
@@ -35,8 +33,8 @@ const RoundedIcon = ({ icon, color }) => {
 }
 
 RoundedIcon.propTypes = {
-  icon: PropTypes.object,
-  color: PropTypes.string
+  icon: PropTypes.object.isRequired,
+  color: PropTypes.string.isRequired
 }
 
 const ContactInfo = (props) => {
@@ -61,7 +59,7 @@ const ContactInfo = (props) => {
       <Divider/>
       <Main>
         <CardsWrapper>
-          <InfoCard>
+          <Wrapper>
             <InfoWrapper>
               <span>Region and idiom</span>
               <InfoSpan>{culture}</InfoSpan>
@@ -70,49 +68,36 @@ const ContactInfo = (props) => {
               <span>Timezone</span>
               <InfoSpan>(UTC - 03:00) Brasília</InfoSpan>
             </InfoWrapper>
-          </InfoCard>
+          </Wrapper>
+          <InfoCard
+            gridSpan={7}
+            icon={userIcon}
+            color='#2cc3d5'
+            value={analytics.user.actived}
+            text='Active Users'
+          />
 
-          <InfoCard gridSpan='7'>
-            <InfoAmountWrapper>
-              <RoundedIcon
-                icon={userIcon}
-                color='#2cc3d5'
-              />
-              <AmountWrapper>
-                <AmountSpan>{analytics.user.actived}</AmountSpan>
-                <span>Active Users</span>
-              </AmountWrapper>
-            </InfoAmountWrapper>
-          </InfoCard>
+          <InfoCard
+            gridSpan={6}
+            icon={receivedIcon}
+            color='#4dcb7b'
+            value={analytics.message.received}
+            text='Messages received'
+          />
 
-          <InfoCard gridSpan='6'>
-            <InfoAmountWrapper>
-                <RoundedIcon
-                  icon={receivedIcon}
-                  color='#4dcb7b'
-                />
-                <AmountWrapper>
-                  <AmountSpan>{analytics.message.received}</AmountSpan>
-                  <span>Messages received</span>
-                </AmountWrapper>
-              </InfoAmountWrapper>
-            </InfoCard>
-
-          <InfoCard gridSpan='4'>
-            <InfoAmountWrapper>
-              <RoundedIcon
-                icon={sentIcon}
-                color='#517bf2'
-              />
-              <AmountWrapper>
-                <AmountSpan>{analytics.message.sent}</AmountSpan>
-                <span>Messages sent</span>
-              </AmountWrapper>
-            </InfoAmountWrapper>
-          </InfoCard>
+          <InfoCard
+            gridSpan={4}
+            icon={sentIcon}
+            color='#517bf2'
+            value={analytics.message.sent}
+            text='Messages sent'
+          />
         </CardsWrapper>
-        <UpdateAccountWrapper></UpdateAccountWrapper>
+        <UpdateAccount>
+
+        </UpdateAccount>
       </Main>
+      <Divider/>
     </>
   )
 }

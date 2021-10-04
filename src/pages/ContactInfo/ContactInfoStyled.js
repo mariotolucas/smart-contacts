@@ -39,16 +39,6 @@ export const CreationDate = styled.span`
   color: ${({ theme }) => theme.fontColorSecondary};
 `
 
-export const InfoCard = styled.div`
-  box-shadow: ${({ theme }) => theme.boxShadow};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  height: 180px;
-  background-color: #fff;
-  grid-column: span ${({ gridSpan }) => gridSpan || '3'};
-  padding: 30px 35px;
-  color: ${({ theme }) => theme.fontColorSecondary};
-`
-
 export const Main = styled.main`
   display: flex;
 `
@@ -58,11 +48,6 @@ export const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 20px;
-`
-
-export const UpdateAccountWrapper = styled.div`
-  flex-grow: 3;
-  background-color: blue;
 `
 
 export const InfoSpan = styled.span`
@@ -75,16 +60,6 @@ export const InfoSpan = styled.span`
 
 export const InfoWrapper = styled.div`
   margin-bottom: 20px;
-`
-
-export const InfoAmountWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-`
-
-export const AmountWrapper = styled.div`
-  margin-left: 10px;
 `
 
 export const AmountSpan = styled.span`
