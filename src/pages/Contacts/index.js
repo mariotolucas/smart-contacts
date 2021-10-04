@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button, { IconButton } from '../../components/Button'
 import Input from '../../components/Inputs/Text'
-import { Title, Header, FiltersWrapper, Main, SubHeading, CardsWrapper, Divider, ViewTypeWrapper } from './ContactsStyled'
+import { Title, Header, FiltersWrapper, Main, SubHeading, CardsWrapper, Divider, ViewTypeWrapper, AddingButton } from './ContactsStyled'
 import blocksIcon from '../../assets/img/organize-blocks.png'
 import listIcon from '../../assets/img/organize-list.png'
 import ContactCard from '../../components/ContactCard'
@@ -151,6 +151,8 @@ const Contacts = () => {
           {getCards(false)}
         </CardsWrapper>
       </Main>
+
+      <AddingButton>+</AddingButton>
     </div>
   )
 }

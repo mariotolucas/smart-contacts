@@ -67,3 +67,17 @@ export const Divider = styled.hr`
     margin: 10px 0 30px;
   }
 `
+
+export const AddingButton = styled.button`
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-color: ${({ theme }) => theme.primaryColor};
+  border: none;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+`
