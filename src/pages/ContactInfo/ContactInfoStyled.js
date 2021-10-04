@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const Header = styled.div`
   display: flex;
   align-items: center;
+
+  flex-wrap: wrap;
 `
 
 export const Name = styled.h2`
@@ -26,6 +28,10 @@ export const CreationDate = styled.span`
 
 export const Main = styled.main`
   display: flex;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 `
 
 export const CardsWrapper = styled.div`
@@ -33,6 +39,14 @@ export const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 20px;
+
+  @media (max-width: 600px) {
+    display: block;
+
+    > div {
+      margin-bottom: 20px;
+    }
+  }
 `
 
 export const InfoSpan = styled.span`
