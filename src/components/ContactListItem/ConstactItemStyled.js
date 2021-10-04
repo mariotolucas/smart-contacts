@@ -27,6 +27,8 @@ export const ListCard = styled.div`
 
 export const DataWrapper = styled.div`
   display: flex;
+  flex-grow: 1;
+
   @media (max-width: 600px) {
     display: block;
     > span {
