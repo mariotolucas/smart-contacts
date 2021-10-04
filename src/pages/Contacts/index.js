@@ -55,11 +55,17 @@ const Contacts = () => {
           name={name}
           template={template}
           date={date}
-          handleFavoriteClick={() => { toggleFavorite(shortName) }}
+          handleFavoriteClick={(e) => { handleFavoriteClick(e, shortName) }}
           onClick={() => { sendToContactPage(shortName) }}
         />
       )
     })
+  }
+
+  const handleFavoriteClick = (event, shortName) => {
+    // it is necessary to stop propagation to not send to contact details page
+    event.stopPropagation()
+    toggleFavorite(shortName)
   }
 
   const getContactsFiltered = () => {
