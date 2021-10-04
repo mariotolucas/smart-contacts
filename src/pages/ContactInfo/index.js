@@ -8,8 +8,6 @@ import receivedIcon from '../../assets/img/received.png'
 import { getDateString } from '../../helpers'
 import { Divider } from '../Contacts/ContactsStyled'
 import {
-  Icon,
-  IconWrapper,
   Header,
   Name,
   Id,
@@ -23,19 +21,7 @@ import {
 import UpdateAccount from './UpdateAccountContainer'
 import InfoCard from '../../components/InfoCard'
 import { Wrapper } from '../../components/InfoCard/InfoCardStyled'
-
-export const RoundedIcon = ({ icon, color }) => {
-  return (
-    <IconWrapper color={color}>
-      <Icon src={icon}/>
-    </IconWrapper>
-  )
-}
-
-RoundedIcon.propTypes = {
-  icon: PropTypes.object.isRequired,
-  color: PropTypes.string.isRequired
-}
+import RoundedIcon from '../../components/RoundedIcon'
 
 const ContactInfo = (props) => {
   const { shortName } = props.match.params

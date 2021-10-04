@@ -5,21 +5,6 @@ export const Header = styled.div`
   align-items: center;
 `
 
-export const IconWrapper = styled.div`
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ color }) => color};
-  margin-right: 10px;
-`
-
-export const Icon = styled.img`
-  width: 45%;
-`
-
 export const Name = styled.h2`
   color: ${({ theme }) => theme.fontColor};
   margin: 0;
