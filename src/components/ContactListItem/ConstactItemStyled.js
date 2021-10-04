@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  height: 50px;
+  min-height: 50px;
   margin-bottom: 20px;
   display: flex;
   align-items:center;
@@ -23,6 +23,16 @@ export const ListCard = styled.div`
   align-items: center;
   padding: 10px 25px;
   cursor: pointer;
+`
+
+export const DataWrapper = styled.div`
+  display: flex;
+  @media (max-width: 600px) {
+    display: block;
+    > span {
+      display: block;
+    }
+  }
 `
 
 export const PhotoWrapper = styled.div`
@@ -47,4 +57,8 @@ export const Date = styled.span`
   color: ${({ theme }) => theme.fontColorSecondary};
   font-size: 17px;
   margin-left: auto;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `

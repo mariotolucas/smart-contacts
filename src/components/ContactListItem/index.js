@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import starIconActive from '../../assets/img/star.png'
 import startIcon from '../../assets/img/favorite.png'
 import {
+  DataWrapper,
   Date,
   FavoriteIcon,
   ListCard,
@@ -32,8 +33,10 @@ const ContactListItem = (props) => {
         <PhotoWrapper>
           <Photo src={image}/>
         </PhotoWrapper>
-        <Name>{name}</Name>
-        <Date> {date ? 'Created at ' + date : 'Invalid Date'}</Date>
+        <DataWrapper>
+          <Name>{name}</Name>
+          <Date> {date ? 'Created at ' + date : 'Invalid Date'}</Date>
+        </DataWrapper>
       </ListCard>
     </Wrapper>
   )

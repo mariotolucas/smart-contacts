@@ -47,6 +47,11 @@ export const PhotoWrapper = styled.div`
   height: 5vw;
   overflow: hidden;
   margin-bottom: 5px;
+
+  @media (max-width: 600px) {
+    width: 25vw;
+    height: 25vw;
+  }
 `
 
 export const Photo = styled.img`
@@ -64,10 +69,18 @@ export const Name = styled.span`
   font-weight: 600;
   font-size: 1.2vw;
   ${baseSpan}
+
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 `
 
 export const Template = styled.span`
   color: ${({ theme }) => theme.fontColorSecondary};
   font-size: .9vw;
   ${baseSpan}
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `

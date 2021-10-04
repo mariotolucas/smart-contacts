@@ -53,9 +53,17 @@ export const CardsWrapper = styled.div`
   display: ${({ isCardView }) => isCardView ? 'grid' : 'block'};
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Divider = styled.hr`
   border-top: 2px solid #d2dfe6;
   margin: 40px 0;
+
+  @media (max-width: 600px) {
+    margin: 10px 0 30px;
+  }
 `

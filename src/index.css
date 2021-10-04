@@ -9,6 +9,12 @@ body {
   padding: 30px 60px;
 }
 
+@media (max-width: 600px) {
+  body {
+    padding: 30px;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
